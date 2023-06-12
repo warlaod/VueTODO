@@ -7,6 +7,5 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./app/./nuxt:/var/www/nuxt
-      - ./app/node_modules:/var/www/nuxt/node_modules
+      - ./todo-app:/app
     command: npm run dev
