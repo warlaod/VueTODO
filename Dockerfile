@@ -3,14 +3,13 @@ FROM node:14
 WORKDIR /app
 
 # ホストのpackage.jsonとpackage-lock.jsonをコンテナ内にコピー
-COPY ./app/package*.json ./
-
-# パッケージのインストール
-RUN npm install
+COPY ./app/package*.json /app
 
 # アプリケーションのソースコードをコンテナ内にコピー
-COPY . .
+COPY /app /app
+
+# パッケージのインストール
+RUN npm install -y
 
 # アプリケーションのビルド
-
 RUN npm run build

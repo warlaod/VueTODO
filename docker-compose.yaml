@@ -7,5 +7,6 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./app:/app
-    command: npx nuxi dev start
+      - ./app/./nuxt:/var/www/nuxt
+      - ./app/node_modules:/var/www/nuxt/node_modules
+    command: npm run dev
